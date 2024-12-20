@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="เว็บไซต์ประชาสัมพันธ์การเลือกตั้ง68 รวมข้อมูลผู้สมัคร ข่าวสาร และเอกสารสำคัญเกี่ยวกับการเลือกตั้ง">
+  <meta name="keywords" content="เลือกตั้ง, ผู้สมัคร, ข่าวสาร, การลงทะเบียน, นครราชสีมา">
+  <meta name="author" content="ทีมพัฒนา">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="responsive_ipad.css" />
+  <link rel="stylesheet" href="responsive_mobile.css" />
+
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <title>ประชาสัมพันธ์-เลือกตั้ง68</title>
+</head>
+
+<body>
+  <button onclick="topFunction()" id="myBtn" title="Go to top">↑</button>
+  <div>
+    <div class="slide">
+      <img src="\assets\img\banner1.png" alt="" />
+      <img src="\assets\img\banner2.png" alt="" />
+      <div class="controls">
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1) ">❯</button>
+      </div>
+    </div>
+    <div class="card-wrap">
+      <div class="card-container">
+        <div>
+          <h1 class="nayok">ผู้ลงสมัครนายก</h1>
+        </div>
+        <div class="card-list">
+          <div class="card-item"
+            onclick="showAlert('นายโคล พาล์มเมอร์', 'ผู้สมัครหมายเลข 1', 'นายโคล พาล์มเมอร์เกิดเมื่อปี 1990 และเป็นนักการเมืองที่มีชื่อเสียงในจังหวัด...', '/assets/img/palmer.jpg')">
+            <img src="/assets/img/palmer.jpg" alt="card-img" class="card-img" />
+            <p class="card-title">นายโคล พาล์มเมอร์</p>
+            <p class="title-number">ผู้สมัครหมายเลข 1</p>
+          </div>
+          <div class="card-item"
+            onclick="showAlert('นายเอนโช่ เฟนานเดซ', 'ผู้สมัครหมายเลข 2', 'นายเอนโช่ เฟนานเดซเกิดเมื่อปี 1990 และเป็นนักการเมืองที่มีชื่อเสียงในจังหวัด...', '/assets/img/enzo.jpg')">
+            <img src="/assets/img/enzo.jpg" alt="card-img" class="card-img" />
+            <p class="card-title">นายเอนโช่ เฟนานเดซ</p>
+            <p class="title-number">ผู้สมัครหมายเลข 2</p>
+          </div>
+          <div class="card-item"
+            onclick="showAlert('นายโคล พาล์มเมอร์', 'ผู้สมัครหมายเลข 3', 'นายโคล พาล์มเมอร์เกิดเมื่อปี 1990 และเป็นนักการเมืองที่มีชื่อเสียงในจังหวัด...', '/assets/img/palmer.jpg')">
+            <img src="/assets/img/palmer.jpg" alt="card-img" class="card-img" />
+            <p class="card-title">นายโคล พาล์มเมอร์</p>
+            <p class="title-number">ผู้สมัครหมายเลข 3</p>
+          </div>
+          <div class="card-item"
+            onclick="showAlert('นายเอนโช่ เฟนานเดซ', 'ผู้สมัครหมายเลข 4', 'นายเอนโช่ เฟนานเดซเกิดเมื่อปี 1990 และเป็นนักการเมืองที่มีชื่อเสียงในจังหวัด...', '/assets/img/enzo.jpg')">
+            <img src="/assets/img/enzo.jpg" alt="card-img" class="card-img" />
+            <p class="card-title">นายเอนโช่ เฟนานเดซ</p>
+            <p class="title-number">ผู้สมัครหมายเลข 4</p>
+          </div>
+          <div class="card-item"
+            onclick="showAlert('นายโคล พาล์มเมอร์', 'ผู้สมัครหมายเลข 5', 'นายโคล พาล์มเมอร์เกิดเมื่อปี 1990 และเป็นนักการเมืองที่มีชื่อเสียงในจังหวัด...', '/assets/img/palmer.jpg')">
+            <img src="/assets/img/palmer.jpg" alt="card-img" class="card-img" />
+            <p class="card-title">นายโคล พาล์มเมอร์</p>
+            <p class="title-number">ผู้สมัครหมายเลข 5</p>
+          </div>
+        </div>
+      </div>
+      <hr style="width: 100%; background-color: rgb(29, 135, 227);  height:5px ;">
+      <div class="card-container" style="margin-top: 20px">
+        <div>
+          <h1>รายชื่อผู้ลงสมัครเลือกตั้ง</h1>
+        </div>
+        <button onclick="showDropdown()">เลือกอำเภอ</button>
+        <div class="dropdown-border">
+          <div id="dropdownContainer" style="display: none">
+            <label for="districts">อำเภอ:</label>
+            <select id="districts" onchange="selectDistrict()">
+              <option value="" disabled selected>
+                -- กรุณาเลือกอำเภอ --
+              </option>
+              <option value="แก้งสนามนาง">แก้งสนามนาง</option>
+              <option value="ขามทะเลสอ">ขามทะเลสอ</option>
+              <option value="ขามสะแกแสง">ขามสะแกแสง</option>
+              <option value="คง">คง</option>
+              <option value="ครบุรี">ครบุรี</option>
+              <option value="จักราช">จักราช</option>
+              <option value="เฉลิมพระเกียรติ">เฉลิมพระเกียรติ</option>
+              <option value="ชุมพวง">ชุมพวง</option>
+              <option value="โชคชัย">โชคชัย</option>
+              <option value="ด่านขุนทด">ด่านขุนทด</option>
+              <option value="โนนแดง">โนนแดง</option>
+              <option value="โนนไทย">โนนไทย</option>
+              <option value="โนนสูง">โนนสูง</option>
+              <option value="บัวใหญ่">บัวใหญ่</option>
+              <option value="บ้านเหลื่อม">บ้านเหลื่อม</option>
+              <option value="ประทาย">ประทาย</option>
+              <option value="ปักธงชัย">ปักธงชัย</option>
+              <option value="ปากช่อง">ปากช่อง</option>
+              <option value="พิมาย">พิมาย</option>
+              <option value="เมืองนครราชสีมา">เมืองนครราชสีมา</option>
+              <option value="วังน้ำเขียว">วังน้ำเขียว</option>
+              <option value="สีคิ้ว">สีคิ้ว</option>
+              <option value="สูงเนิน">สูงเนิน</option>
+              <option value="เสิงสาง">เสิงสาง</option>
+              <option value="หนองบุนนาก">หนองบุนนาก</option>
+              <option value="ห้วยแถลง">ห้วยแถลง</option>
+              <option value="เทพารักษ์">เทพารักษ์</option>
+              <option value="บัวลาย">บัวลาย</option>
+              <option value="พระทองคำ">พระทองคำ</option>
+              <option value="เมืองยาง">เมืองยาง</option>
+              <option value="ลำทะเมนชัย">ลำทะเมนชัย</option>
+              <option value="สีดา">สีดา</option>
+            </select>
+          </div>
+          <div id="zoneDropdownContainer" style="display: none; margin-top: 20px">
+            <label for="zones">เขต:</label>
+            <select id="zones" onchange="selectZone()">
+              <option value="" disabled selected>-- กรุณาเลือกเขต --</option>
+            </select>
+          </div>
+        </div>
+        <div id="selectedDistrict" style="margin-top: 20px; font-size: 18px"></div>
+        <div id="districtImage"></div>
+      </div>
+    </div>
+    <div class="box-topic-news">
+      <section id="news" class="news-section">
+        <h2>ข่าวสารวันนี้</h2>
+        <div class="pic-topic">
+          <a href="https://www.facebook.com/100064761877004/posts/1030612819107438/?rdid=V3ZGx3q7Qcuckzm2">
+            <img src="\assets\img\test.jpg" alt="ข่าวสารวันนี้" />
+          </a>
+        </div>
+        <!-- <div class="b-show">
+          <div class="news-grid">
+            <a href="news1.html">
+              <div class="news-item">
+                <img src="\assets/img/election.png" alt="Election News" />
+                <h1>การเลือกตั้ง</h1>
+              </div>
+            </a>
+            <a href="news.html">
+              <div class="news-item">
+                <img src="\assets\img\gg.jpg" alt="News 2" />
+                <h1>ฝ่ายจัดการคุณภาพน้ำ ปฏิบัติภารกิจ</h1>
+              </div>
+            </a>
+            <a href="https://www.koratpao.go.th/จิตอาสา-เราทำความดี-ด้ว-2/">
+              <div class="news-item">
+                <img src="\assets\img\hh.jpg" alt="News 3" />
+                <h1>จิตอาสา “เราทำความดี ด้วยหัวใจ”</h1>
+              </div>
+            </a>
+          </div>
+        </div> -->
+
+        <div class="">
+          <a href="">
+            <img src="\assets\img\qrcode.jpg" alt="ข่าวสารวันนี้" />
+          </a>
+        </div>
+        <article class="news-file">
+          <h3>การแบ่งเขตเลือกตั้ง!</h3>
+          <p>
+            การแบ่งเขตเลือกตั้งสมาชิกสภาองค์การบริหารส่วนจังหวัดนครราชสีมา...
+          </p>
+          <div class="file-date-down">
+            <p class="file-date" style="font-size: 12px; color: rgba(0, 0, 0, 0.493);">
+              อัปเดทเมื่อ : 18 ธันวาคม 2567
+            </p>
+            <a href="\files/การแบ่งเขตเลือกตั้งสมาชิกสภา.pdf" download class="download">ดาวน์โหลดเอกสาร</a>
+          </div>
+        </article>
+        <article class="news-file">
+          <h3>การสมัครรับเลือกตั้งเป็น ส.อบจ. และ นายก</h3>
+          <p>
+            สำหรับผู้ที่ต้องการลงทะเบียนสมัครรับเลือกตั้งเป็น ส.อบจ. และ นายก
+          </p>
+          <div class="file-date-down">
+            <p class="file-date" style="font-size: 12px; color: rgba(0, 0, 0, 0.493);">
+              อัปเดทเมื่อ : 18 ธันวาคม 2567
+            </p>
+            <a href="\files/files\การสมัครรับเลือกตั้งเป็น ส.อบจ. และ นายก.pdf" download
+              class="download">ดาวน์โหลดเอกสาร</a>
+          </div>
+        </article>
+      </section>
+    </div>
+    <div class="border-contact" id="contact">
+      <div class="all-contact">
+        <div class="contact">
+          <h3 style="margin-bottom: 10px; text-align: center;">ช่องทางติดต่อ</h3>
+          <div class="contact-info">
+            <p class="center">ศูนย์อำนวยการการเลือกตั้งฯ</p>
+            <i class="fa fa-phone"> 044-241842</i>
+          </div>
+          <p><a href="contact.html">ติดต่อศูนย์ประสานงาน คลิ๊ก!</a></p>
+
+          <h3 style="text-align: center; margin-top: 20px;">ติดตามเพิ่มเติม</h3>
+          <p style="text-align: center;">
+            <a href="https://www.facebook.com/KoratPaoOfficial" class="fa fa-facebook"></a>
+            <a href="https://youtube.com/channel/UCy5nqiZZc8j73rNzirR_2bg?si=qQ5sUnADXpKqP4eL"
+              class="fa fa-youtube"></a>
+          </p>
+        </div>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3854.4033679104828!2d102.0963255751594!3d14.97029748556109!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31194c943d98b3b9%3A0x6fa630d684faafe0!2z4Lit4LiH4LiE4LmM4LiB4Liy4Lij4Lia4Lij4Li04Lir4Liy4Lij4Liq4LmI4Lin4LiZ4LiI4Lix4LiH4Lir4Lin4Lix4LiU4LiZ4LiE4Lij4Lij4Liy4LiK4Liq4Li14Lih4Liy!5e0!3m2!1sth!2sth!4v1731382733158!5m2!1sth!2sth"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="index.js"></script>
+  <script src="district.js"></script>
+</body>
+
+</html>
